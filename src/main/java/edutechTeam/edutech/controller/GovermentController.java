@@ -23,6 +23,6 @@ public class GovermentController {
     public ApiResponse<List<Government>> getGovernmentInfo(){
 
         List<Government> listDto = governservice.findAll();
-        return new ApiResponse<>(SuccessStatus.EDU_READ, listDto);
+        return new ApiResponse<>(SuccessStatus.GOVERN_READ, listDto);
     }
 }

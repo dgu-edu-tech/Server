@@ -25,6 +25,6 @@ public class ItMachineController {
     public ApiResponse<List<ItMachine>> getGovernmentInfo(){
 
         List<ItMachine> listDto = itMachineService.findAll();
-        return new ApiResponse<>(SuccessStatus.EDU_READ, listDto);
+        return new ApiResponse<>(SuccessStatus.ITMACHINE_READ, listDto);
     }
 }
