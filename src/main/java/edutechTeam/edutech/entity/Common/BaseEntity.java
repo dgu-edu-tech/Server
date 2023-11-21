@@ -1,20 +1,15 @@
-package edutechTeam.edutech.entity;
+package edutechTeam.edutech.entity.Common;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.util.Date;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-@Entity
-@Table(name = "it_machine")
-public class it_machine {
+@MappedSuperclass
+@EntityListeners(AuditingEntityListener.class)
+@Getter
+public abstract class BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -36,11 +31,6 @@ public class it_machine {
     @Column(name = "apply", nullable = false)
     private Integer apply;
 
-    @Column(nullable = false)
-    private String applicant;
-
-    @Column
+    @Column(name = "image")
     private String image;
-
-
 }
