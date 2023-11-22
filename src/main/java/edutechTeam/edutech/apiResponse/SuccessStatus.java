@@ -14,13 +14,15 @@ public enum SuccessStatus {
 
 
     /** Education **/
-    EDU_READ(true, 200, "교육 정보값이 조회되었습니다."),
+    EDU_INFO_READ(true, 200, "교육 정보값이 조회되었습니다."),
+    EDU_LIST_READ(true, 200, "교육 리스트값이 조회되었습니다."),
 
     /** ItMachine **/
-    ITMACHINE_READ(true, 200, "IT기기 정보값이 조회되었습니다."),
+    ITMACHINE_INFO_READ(true, 200, "IT기기 정보값이 조회되었습니다."),
+    ITMACHINE_LIST_READ(true, 200, "IT기기 리스트값이 조회되었습니다."),
 
     /** Government **/
-    GOVERN_READ(true, 200, "정부정책 정보값이 조회되었습니다.");
+    GOVERN_LIST_READ(true, 200, "정부정책 리스트값이 조회되었습니다.");
 
     private final Boolean success;
     private final int code;
