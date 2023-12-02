@@ -6,10 +6,8 @@ import edutechTeam.edutech.dto.EduDto;
 import edutechTeam.edutech.entity.Education;
 import edutechTeam.edutech.service.EduService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -20,14 +18,14 @@ public class EducationController {
 
     private final EduService eduservice;
 
-    @PostMapping("/getInfo/{id}")
+    @GetMapping("/getInfo/{id}")
     public ApiResponse<Optional<Education>> getEducationInfo(@PathVariable Long id){
 
         Optional<Education> info = eduservice.findInfo(id);
         return new ApiResponse<>(SuccessStatus.EDU_INFO_READ, info);
     }
 
-    @PostMapping("/getList")
+    @GetMapping("/getList")
     public ApiResponse<List<EduDto>> getEducationList() {
 
         List<EduDto> list = eduservice.findList();

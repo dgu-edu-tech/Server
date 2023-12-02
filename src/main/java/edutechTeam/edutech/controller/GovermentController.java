@@ -8,10 +8,7 @@ import edutechTeam.edutech.entity.Education;
 import edutechTeam.edutech.entity.Government;
 import edutechTeam.edutech.service.GovernService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -23,14 +20,14 @@ public class GovermentController {
 
     private final GovernService governservice;
 
-    @PostMapping("/getInfo/{id}")
+    @GetMapping("/getInfo/{id}")
     public ApiResponse<Optional<Government>> getGovernmentInfo(@PathVariable Long id){
 
         Optional<Government> info = governservice.findInfo(id);
-        return new ApiResponse<>(SuccessStatus.GOVERN_INFO_READ, info);
+        return new ApiResponse<>(SuccessStatus.GOVERN_LIST_READ, info);
     }
 
-    @PostMapping("/getList")
+    @GetMapping("/getList")
     public ApiResponse<List<GovernDto>> getEducationList() {
 
         List<GovernDto> list = governservice.findList();
