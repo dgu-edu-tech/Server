@@ -37,7 +37,7 @@ jobs:
       run: |
         cd ./src/main/resources
         ls -al
-        cat ./application-prod.yml  
+        cat ./application.yml  
 
     # Gradle Build를 위한 권한 부여
     - name: Grant execute permission for gradlew
