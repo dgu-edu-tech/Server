@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class EduDto {
 
-    private Long title;
+    private String title;
     private String content;
     private String image;
 

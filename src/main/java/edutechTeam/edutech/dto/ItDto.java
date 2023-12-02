@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class ItDto {
-    private Long title;
+    private String title;
     private String content;
     private String image;
 }
