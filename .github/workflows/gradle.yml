@@ -33,7 +33,11 @@ jobs:
         cd ./src/main/resources
         touch ./application-prod.yml
         echo "${{ secrets.APPLICATION_PROD }}" > ./application-prod.yml
-        cat ./application-prod.yml
+    - name: check
+      run: |
+        cd ./src/main/resources
+        ls -al
+        cat ./application-prod.yml  
 
     # Gradle Build를 위한 권한 부여
     - name: Grant execute permission for gradlew
