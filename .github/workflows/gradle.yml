@@ -28,11 +28,11 @@ jobs:
         distribution: 'temurin'
 
     # application-prod.yml 생성
-    - name: make application-prod.yml
+    - name: make application.yml
       run: |
         cd ./src/main/resources
-        touch ./application-prod.yml
-        echo "${{ secrets.APPLICATION_PROD }}" > ./application-prod.yml
+        touch ./application.yml
+        echo "${{ secrets.APPLICATION_PROD }}" > ./application.yml
     - name: check
       run: |
         cd ./src/main/resources
