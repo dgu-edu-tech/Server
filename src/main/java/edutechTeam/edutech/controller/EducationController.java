@@ -6,6 +6,7 @@ import edutechTeam.edutech.dto.EduDto;
 import edutechTeam.edutech.entity.Education;
 import edutechTeam.edutech.service.EduService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,8 +32,6 @@ public class EducationController {
         List<EduDto> list = eduservice.findList();
         return new ApiResponse<>(SuccessStatus.EDU_LIST_READ, list);
     }
-    // 제목, 이미지, 설명
-
 
 
 }

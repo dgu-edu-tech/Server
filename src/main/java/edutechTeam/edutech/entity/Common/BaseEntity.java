@@ -12,12 +12,12 @@ import java.util.Date;
 public abstract class BaseEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
     @Column(name = "title", nullable = false)
-    private Long title;
+    private String title;
 
     @Column(name = "content", nullable = false)
     private String content;
@@ -26,7 +26,7 @@ public abstract class BaseEntity {
     private String url;
 
     @Column(name = "deadline", nullable = false)
-    private Date deadline;
+    private String deadline;
 
     @Column(name = "apply", nullable = false)
     private Integer apply;

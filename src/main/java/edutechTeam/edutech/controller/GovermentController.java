@@ -28,7 +28,7 @@ public class GovermentController {
     }
 
     @GetMapping("/getList")
-    public ApiResponse<List<GovernDto>> getEducationList() {
+    public ApiResponse<List<GovernDto>> getGovernmentList() {
 
         List<GovernDto> list = governservice.findList();
         return new ApiResponse<>(SuccessStatus.GOVERN_LIST_READ, list);

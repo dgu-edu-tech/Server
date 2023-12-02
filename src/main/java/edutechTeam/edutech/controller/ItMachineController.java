@@ -20,7 +20,7 @@ public class ItMachineController {
     private final ItMachineService itMachineService;
 
     @GetMapping("/getList")
-    public ApiResponse<List<ItMachine>> getEducationList() {
+    public ApiResponse<List<ItMachine>> getItMachineList() {
         List<ItMachine> list = itMachineService.findList();
         return new ApiResponse<>(SuccessStatus.ITMACHINE_LIST_READ, list);
     }
