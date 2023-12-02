@@ -16,13 +16,14 @@ public class ApiResponse<T> {
     private final int code;
     private final String message;
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    private T result;
+    private T data;
 
     // 성공한 경우
-    public ApiResponse(SuccessStatus status, T data) {
+    public ApiResponse(SuccessStatus status, T result) {
         this.success = status.getSuccess();
         this.code = status.getCode();
         this.message = status.getMessage();
+        this.data = result;
     }
     public ApiResponse(SuccessStatus status) {
         this.success = status.getSuccess();
