@@ -13,7 +13,7 @@ public interface GovernRepository extends JpaRepository<Government, Long> {
 
     List<Government> findAll();
 
-    @Query("select new edutechTeam.edutech.dto.GovernDto(g.title, g.content, g.image) from Government g")
+    @Query("select new edutechTeam.edutech.dto.GovernDto(g.id, g.title, g.content, g.image) from Government g")
     List<GovernDto> findList();
 
     Optional<Government> findById(Long id);

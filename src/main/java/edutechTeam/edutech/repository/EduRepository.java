@@ -13,7 +13,7 @@ public interface EduRepository extends JpaRepository<Education, Long> {
     List<Education> findAll();
 
 
-    @Query("select new edutechTeam.edutech.dto.EduDto(e.title, e.content, e.image) from Education e")
+    @Query("select new edutechTeam.edutech.dto.EduDto(e.id, e.title, e.content, e.image) from Education e")
     List<EduDto> findList();
 
 
